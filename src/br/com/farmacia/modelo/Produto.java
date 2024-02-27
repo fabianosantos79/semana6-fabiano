@@ -6,6 +6,12 @@ public class Produto {
     private String nome;
     private String fabricante;
 
+    public Produto(int id, double preco, String nome, String fabricante) {
+        this.id = id;
+        this.preco = preco;
+        this.nome = nome;
+        this.fabricante = fabricante;
+    }
 
     public int getId() {
         return id;
@@ -37,5 +43,15 @@ public class Produto {
 
     public void setFabricante(String fabricante) {
         this.fabricante = fabricante;
+    }
+
+    @Override
+    public String toString() {
+        return "Produto{" +
+                "id=" + id +
+                ", preco=" + preco +
+                ", nome='" + nome + '\'' +
+                ", fabricante='" + fabricante + '\'' +
+                '}';
     }
 }

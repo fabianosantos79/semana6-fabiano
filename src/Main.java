@@ -9,7 +9,16 @@ import java.sql.SQLException;
 public class Main {
     public static void main(String... x) {
 
-        ProdutoService produtoService = new ProdutoService();
-        produtoService.registerProduct(2, 37.00, "Blusa", "Hering");
+        //CADASTRAR PRODUTOS
+        //   ProdutoService produtoService = new ProdutoService();
+        //   produtoService.registerProduct(1, 15.00, "Camiseta", "Lupo");
+        //   produtoService.registerProduct(2, 37.00, "Blusa", "Hering");
+
+
+        //LISTAR PRODUTOS
+        //   ProdutoService produtoService = new ProdutoService();
+        //   System.out.println("Produtos cadastrados:");
+        //   var produtos = produtoService.viewProduct();
+        //   produtos.stream().forEach(System.out::println);
     }
 }
