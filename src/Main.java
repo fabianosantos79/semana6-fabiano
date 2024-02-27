@@ -11,12 +11,12 @@ public class Main {
     public static void main(String[] args) {
 
         //CADASTRAR PRODUTOS
-           ProdutoService produtoService = new ProdutoService();
-           produtoService.registerProduct(1, 15.00, "Aspirina", "Bayer");
-           produtoService.registerProduct(2, 87.50, "Viagra", "Pfizer");
-           produtoService.registerProduct(3, 115.50, "Leite UHT", "Nestle");
-           produtoService.registerProduct(4, 8.50, "Xarope", "Melagriao");
-           produtoService.registerProduct(5, 215.50, "Nebulizador", "Tec Toy");
+        //   ProdutoService produtoService = new ProdutoService();
+        //   produtoService.registerProduct(1, 15.00, "Aspirina", "Bayer");
+        //   produtoService.registerProduct(2, 87.50, "Viagra", "Pfizer");
+        //   produtoService.registerProduct(3, 115.50, "Leite UHT", "Nestle");
+        //   produtoService.registerProduct(4, 8.50, "Xarope", "Melagriao");
+        //   produtoService.registerProduct(5, 215.50, "Nebulizador", "Tec Toy");
 
 
         //LISTAR PRODUTOS
@@ -39,9 +39,9 @@ public class Main {
 
 
         //DELETAR PRODUTO
-        //   ProdutoService produtoService = new ProdutoService();
-        //   produtoService.deleteProduct(4);
-        //   System.out.println("Produto excluído!");
+           ProdutoService produtoService = new ProdutoService();
+           produtoService.deleteProduct(4);
+           System.out.println("Produto excluído!");
 
     }
 }
