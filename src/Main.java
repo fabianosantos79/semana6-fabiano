@@ -10,6 +10,6 @@ public class Main {
     public static void main(String... x) {
 
         ProdutoService produtoService = new ProdutoService();
-        produtoService.registerProduct(1, 15.00, "Camiseta", "Lupo");
+        produtoService.registerProduct(2, 37.00, "Blusa", "Hering");
     }
 }

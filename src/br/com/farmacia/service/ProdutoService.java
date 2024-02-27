@@ -1,6 +1,7 @@
 package br.com.farmacia.service;
 
 import br.com.farmacia.dao.ConnectionFactory;
+import br.com.farmacia.dao.ProdutoDao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,21 +14,7 @@ public class ProdutoService {
     }
 
     public void registerProduct(int id, double preco, String nome, String fabricante){
-        String sql = "INSERT INTO produto(id, preco, nome, fabricante) VALUES(?,?,?,?)";
         Connection conn = connection.startConection();
-
-        try {
-            PreparedStatement preparedStatement = conn.prepareStatement(sql);
-
-            preparedStatement.setInt(1, id);
-            preparedStatement.setDouble(2, preco);
-            preparedStatement.setString(3, nome);
-            preparedStatement.setString(4, fabricante);
-
-            preparedStatement.execute();
-        }
-        catch (SQLException e){
-            throw new RuntimeException(e);
-        }
+        new ProdutoDao(conn).insert(id, preco, nome, fabricante);
     }
 }
