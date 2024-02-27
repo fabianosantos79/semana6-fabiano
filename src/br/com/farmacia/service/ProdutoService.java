@@ -5,9 +5,6 @@ import br.com.farmacia.dao.ProdutoDao;
 import br.com.farmacia.modelo.Produto;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.HashSet;
 import java.util.Set;
 
 public class ProdutoService {

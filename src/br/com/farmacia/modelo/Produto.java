@@ -40,7 +40,6 @@ public class Produto {
     public String getFabricante() {
         return fabricante;
     }
-
     public void setFabricante(String fabricante) {
         this.fabricante = fabricante;
     }
