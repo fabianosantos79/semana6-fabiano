@@ -57,4 +57,67 @@ public class ProdutoDao {
         }
         return produtos;
     }
+
+
+    public Produto viewListByID(int id){
+        String sql = "SELECT * FROM produto WHERE id = ?";
+        PreparedStatement preparedStatement;
+        ResultSet resultSet;
+        Produto produto = null;
+
+        try {
+            preparedStatement = conn.prepareStatement(sql);
+            preparedStatement.setInt(1, id);
+            resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()){
+                int idRecuperado = resultSet.getInt(1);
+                double preco = resultSet.getDouble(2);
+                String nome = resultSet.getString(3);
+                String fabricante = resultSet.getString(4);
+
+                produto = new Produto(idRecuperado, preco, nome, fabricante);
+            }
+            resultSet.close();
+            preparedStatement.close();
+            conn.close();
+        }
+        catch (SQLException e){
+            throw new RuntimeException(e);
+        }
+        return produto;
+    }
+
+    public void update(int id, double preco){
+    PreparedStatement preparedStatement;
+    String sql = "UPDATE produto SET preco = ? WHERE id = ?";
+
+    try {
+        preparedStatement = conn.prepareStatement(sql);
+        preparedStatement.setDouble(1, preco);
+        preparedStatement.setInt(2, id);
+
+        preparedStatement.execute();
+        preparedStatement.close();
+        conn.close();
+    }
+    catch (SQLException e){
+        throw new RuntimeException(e);
+    }
+    }
+
+    public void delete(int id){
+        String sql = "DELETE FROM produto WHERE id = ?";
+
+        try {
+            PreparedStatement preparedStatement = conn.prepareStatement(sql);
+            preparedStatement.setInt(1, id);
+            preparedStatement.execute();
+            preparedStatement.close();
+            conn.close();
+        }
+        catch (SQLException e){
+            throw new RuntimeException(e);
+        }
+    }
 }
