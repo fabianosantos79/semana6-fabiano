@@ -89,7 +89,7 @@ public class Main {
 //            System.out.println("Produto cadastrado:");
 //            var produto = produtoService.viewProductByID(3);
 //            System.out.println(produto.toString());
-//        }
+//    }
 
 
         //ALTERAR PREÇO
